@@ -5,10 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CsvWriter {
-    private String path;
+    private String path = "src/java/com/academy/OOPexam/resources/MockDatabase.csv";
 
-    public CsvWriter (String path) {
-        this.path = path;
+    public CsvWriter () {
     }
 
     //Writer class optimised to either overwrite or append to file

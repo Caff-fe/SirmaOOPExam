@@ -9,9 +9,8 @@ import java.util.List;
 
 public class CsvReader {
 
-    private String path;
-    public CsvReader (String path) {
-        this.path = path;
+    private String path = "src/java/com/academy/OOPexam/resources/MockDatabase.csv";
+    public CsvReader () {
     }
 
     public List<String> readLines() {

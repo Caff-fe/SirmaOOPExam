@@ -13,15 +13,20 @@ public class CsvReader {
     public CsvReader () {
     }
 
-    public List<String> readLines() {
-        List<String> employees = new ArrayList<>();
+    public List<String[]> readLines() {
+        List<String[]> employees = new ArrayList<>();
+        boolean isFirstLine = true;
 
         try (BufferedReader csvReader = new BufferedReader(new FileReader(path))) {
-            String line = "";
+            String line;
 
             while (( line = csvReader.readLine()) != null) {
+                if(isFirstLine){
+                    isFirstLine = false;
+                    continue;
+                }
                 String[] values = line.split(",");
-                employees.add(Arrays.toString(values));
+                employees.add(values);
             }
 
         } catch (IOException exception) {
